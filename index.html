@@ -3,136 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ONYX G INK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
+*{box-sizing:border-box}
+
 body{
 margin:0;
-background:#0b0b0b;
+font-family:Poppins, sans-serif;
+background:linear-gradient(180deg,#2b1b10,#5a3a1b,#a8732b);
 color:white;
-font-family:Poppins;
+overflow-x:hidden
 }
-
-/* HEADER */
 
 header{
-background:black;
-padding:20px;
-text-align:center;
-border-bottom:1px solid #333;
+position:fixed;
+top:0;
+width:100%;
+padding:18px 40px;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(6px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000
 }
 
-header h1{
-font-family:Cinzel;
-font-size:42px;
+.logo{
+font-family:Cinzel,serif;
+font-size:34px;
 letter-spacing:4px;
-color:#d4af37;
-text-shadow:0 5px 20px black;
-margin:0;
+color:#ffd27a;
+text-shadow:0 4px 12px rgba(0,0,0,0.8),0 0 8px #d4af37;
 }
 
-/* HERO */
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#eee;
+font-size:14px
+}
+
+nav a:hover{color:#ffd27a}
 
 .hero{
-height:70vh;
+height:100vh;
+position:relative;
+overflow:hidden;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url("wolf.jpg");
-background-size:cover;
-background-position:center;
+text-align:center
 }
 
-.hero h2{
-font-size:55px;
-font-family:Cinzel;
-color:#d4af37;
-margin:0;
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1
 }
 
-.hero p{
-font-size:18px;
-margin-top:10px;
-color:#ddd;
+.hero-content h1{
+font-family:Cinzel,serif;
+font-size:90px;
+letter-spacing:6px;
+color:#ffd27a;
+text-shadow:0 8px 25px rgba(0,0,0,0.9);
+margin:0
 }
 
-/* SECTION */
+.hero-content p{
+font-size:20px;
+margin-top:10px
+}
 
 section{
-padding:80px 8%;
+padding:90px 8%;
 max-width:1300px;
-margin:auto;
+margin:auto
 }
 
-h3{
+h2{
 text-align:center;
-font-family:Cinzel;
-font-size:32px;
-color:#d4af37;
+font-family:Cinzel,serif;
+font-size:36px;
 margin-bottom:40px;
+color:#ffd27a
 }
-
-/* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px
 }
 
 .gallery img{
 width:100%;
 height:320px;
 object-fit:cover;
-border-radius:8px;
-transition:0.3s;
+border-radius:10px;
+cursor:pointer;
+transition:0.4s
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
+.gallery img:hover{transform:scale(1.05)}
 
-/* VIDEO */
-
-.video{
-text-align:center;
-}
-
-video{
+.lightbox{
+position:fixed;
+top:0;
+left:0;
 width:100%;
-max-width:800px;
-border-radius:10px;
-margin-top:20px;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000
 }
 
-/* CONTACT */
-
-.contact{
-text-align:center;
-background:black;
-padding:50px;
-border-radius:10px;
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px
 }
 
-.contact a{
-display:block;
-margin:10px;
-color:#d4af37;
+.video-section{
+text-align:center
+}
+
+.video-section video{
+width:100%;
+max-width:600px;
+border-radius:12px;
+box-shadow:0 15px 35px rgba(0,0,0,0.7)
+}
+
+.ceo{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+justify-content:center
+}
+
+.ceo img{
+width:260px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.8)
+}
+
+.ceo-text{
+max-width:500px
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:16px 22px;
+border-radius:40px;
+font-size:14px;
 text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.7)
 }
-
-/* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
-color:#777;
+padding:40px;
+color:#eee
 }
 
 </style>
@@ -141,20 +185,28 @@ color:#777;
 <body>
 
 <header>
-<h1>ONYX G INK</h1>
+<div class="logo">ONYX G INK</div>
+<nav>
+<a href="#gallery">Gallery</a>
+<a href="#video">Studio</a>
+<a href="#ceo">Artist</a>
+</nav>
 </header>
 
-<div class="hero">
-<h2>Ink Your Story</h2>
-<p>Luxury Tattoo Studio</p>
+<section class="hero">
+<video autoplay muted loop>
+<source src="ink-on-skin.mp4" type="video/mp4">
+</video>
+<div class="hero-content">
+<h1>ONYX G</h1>
+<p>Ink Your Story • Live Your Legacy</p>
 </div>
+</section>
 
-<section>
-
-<h3>Featured Tattoos</h3>
+<section id="gallery">
+<h2>Featured Tattoo Work</h2>
 
 <div class="gallery">
-
 <img src="butterfly.jpg">
 <img src="cherry.jpg">
 <img src="Cross.jpg">
@@ -169,36 +221,61 @@ color:#777;
 <img src="O.S.S.jpg">
 <img src="Real.jpg">
 <img src="wolf.jpg">
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+<img src="">
+</div>
+
+<section id="video" class="video-section">
+<h2>Inside The Studio</h2>
+<video controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+</section>
+
+<section id="ceo">
+<h2>Founder & Artist</h2>
+
+<div class="ceo">
+<img src="C.E.O.jpg">
+
+<div class="ceo-text">
+<p><strong>Onyx G</strong> is the creative force behind Onyx G Ink. Known for bold, detailed and expressive tattoo work, the studio focuses on turning personal stories into lasting art.</p>
+
+<p>Every tattoo is crafted with precision, creativity and passion. The goal is simple — deliver powerful ink that represents identity, loyalty and legacy.</p>
+</div>
 
 </div>
 
 </section>
 
-<section class="video">
-
-<h3>Tattoo In Action</h3>
-
-<video controls>
-<source src="ink-on-skin.mp4" type="video/mp4">
-</video>
-
-</section>
-
-<section class="contact">
-
-<h3>Book Your Tattoo</h3>
-
-<a href="https://wa.me/234706207789">WhatsApp: 0706207789</a>
-<a href="https://instagram.com/samuelvic36">Instagram: @samuelvic36</a>
-<a href="https://tiktok.com/@onyx_g35">TikTok: @onyx_g35</a>
-
-</section>
+<a class="whatsapp" href="https://wa.me/234706207789">Book on WhatsApp</a>
 
 <footer>
-
 ONYX G INK • Professional Tattoo Studio
-
 </footer>
+
+<script>
+
+const images=document.querySelectorAll('.gallery img');
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=lightbox.querySelector('img');
+
+images.forEach(img=>{
+img.onclick=()=>{
+lightbox.style.display='flex';
+lightboxImg.src=img.src;
+}
+})
+
+lightbox.onclick=()=>{
+lightbox.style.display='none'
+}
+
+</script>
 
 </body>
 </html>
