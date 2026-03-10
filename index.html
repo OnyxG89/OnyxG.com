@@ -13,12 +13,11 @@
 body{
 margin:0;
 font-family:Montserrat, sans-serif;
-background:#0a0a0a;
-color:#f2f2f2;
+background:#0b0b0b;
+color:#f5f5f5;
 overflow-x:hidden
 }
 
-/* HEADER */
 header{
 position:fixed;
 top:0;
@@ -34,13 +33,13 @@ z-index:1000
 
 .logo{
 font-family:Cinzel, serif;
-font-size:34px;
+font-size:36px;
 font-weight:900;
 letter-spacing:4px;
 color:#d4af37;
 text-shadow:
-0 0 8px rgba(212,175,55,0.6),
-0 4px 10px rgba(0,0,0,0.7);
+0 0 10px rgba(212,175,55,0.7),
+0 6px 20px rgba(0,0,0,0.8);
 }
 
 nav a{
@@ -52,49 +51,45 @@ letter-spacing:1px;
 transition:.3s
 }
 
-nav a:hover{
-color:#d4af37
-}
+nav a:hover{color:#d4af37}
 
-/* HERO */
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
 url("studio-bg.jpg") center/cover no-repeat;
 
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- text-align:center;
- padding:40px
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px
 }
 
 .hero h1{
 font-family:Cinzel, serif;
-font-size:90px;
+font-size:95px;
 margin:0;
-color:#d4af37;
 letter-spacing:6px;
+color:#d4af37;
 text-shadow:
-0 0 10px rgba(212,175,55,0.7),
-0 10px 25px rgba(0,0,0,0.8);
+0 0 12px rgba(212,175,55,.7),
+0 12px 40px rgba(0,0,0,.9);
 }
 
 .hero p{
 font-size:22px;
-margin-top:15px;
+margin-top:10px;
 color:#ddd
 }
 
 .hero-btn{
 margin-top:40px;
-padding:14px 34px;
+padding:15px 36px;
 border:1px solid #d4af37;
 color:#d4af37;
 text-decoration:none;
-font-size:14px;
 letter-spacing:1px;
 transition:.3s
 }
@@ -104,23 +99,21 @@ background:#d4af37;
 color:#000
 }
 
-/* SECTION */
 section{
-padding:100px 8%;
+padding:110px 8%;
 max-width:1400px;
 margin:auto
 }
 
 h2{
 font-family:Cinzel, serif;
-font-size:42px;
-margin-bottom:30px;
+font-size:44px;
+margin-bottom:35px;
 letter-spacing:3px;
 color:#d4af37;
 text-align:center
 }
 
-/* PORTFOLIO */
 .portfolio-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -131,34 +124,31 @@ gap:25px
 width:100%;
 height:340px;
 object-fit:cover;
-border-radius:8px;
+border-radius:10px;
 transition:transform .4s, box-shadow .4s
 }
 
 .portfolio-grid img:hover{
 transform:scale(1.05);
-box-shadow:0 15px 35px rgba(0,0,0,0.7)
+box-shadow:0 15px 35px rgba(0,0,0,0.8)
 }
 
-/* VIDEO */
-.video-section{
-text-align:center
-}
+.video-section{text-align:center}
 
 .video-section video{
 width:100%;
 max-width:900px;
 border-radius:10px;
-margin-top:20px;
-box-shadow:0 20px 40px rgba(0,0,0,0.8)
+margin-top:25px;
+box-shadow:0 20px 40px rgba(0,0,0,.9)
 }
 
-/* BOOKING */
 .booking{
 background:#000;
-padding:50px;
-border-radius:10px;
-text-align:center
+padding:60px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.7)
 }
 
 .contact a{
@@ -168,19 +158,30 @@ color:#d4af37;
 text-decoration:none
 }
 
-.contact a:hover{color:white}
+.contact a:hover{color:#fff}
 
-/* FOOTER */
+.whatsapp-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:16px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.6)
+}
+
 footer{
 background:#000;
 padding:40px;
 text-align:center;
-color:#888
+color:#777
 }
 
-/* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:48px}
+.hero h1{font-size:52px}
 nav{display:none}
 }
 
@@ -198,16 +199,14 @@ nav{display:none}
 </nav>
 </header>
 
-
 <section class="hero">
 <h1>ONYX G</h1>
 <p>Ink Your Story • Live Your Legacy</p>
 <a class="hero-btn" href="#portfolio">View Tattoo Work</a>
 </section>
 
-
 <section id="portfolio">
-<h2>Featured Tattoos</h2>
+<h2>Featured Tattoo Work</h2>
 
 <div class="portfolio-grid">
 
@@ -224,10 +223,7 @@ nav{display:none}
 
 </div>
 
-</div>
-
 </section>
-
 
 <section id="studio" class="video-section">
 <h2>Inside The Studio</h2>
@@ -238,25 +234,24 @@ nav{display:none}
 
 </section>
 
-
 <section id="booking">
-<h2>Book A Tattoo</h2>
+<h2>Book Your Tattoo</h2>
 
 <div class="booking">
-<p>Contact Onyx G Ink to book your tattoo session.</p>
+<p>Contact Onyx G Ink to schedule your next tattoo.</p>
 
 <div class="contact">
-
 <a href="https://wa.me/234706207789">WhatsApp: 0706207789</a>
 <a href="https://instagram.com/samuelvic36">Instagram: @samuelvic36</a>
 <a href="https://tiktok.com/@onyx_g35">TikTok: @onyx_g35</a>
 <a href="https://t.me/OnyxGink">Telegram: OnyxGink</a>
-
 </div>
+
 </div>
 
 </section>
 
+<a class="whatsapp-btn" href="https://wa.me/234706207789">Chat on WhatsApp</a>
 
 <footer>
 © 2026 ONYX G INK • Luxury Tattoo Studio
