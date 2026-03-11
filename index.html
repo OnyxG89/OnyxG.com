@@ -170,7 +170,7 @@ margin:auto;
 .slide-track{
 display:flex;
 width:calc(200px * 24);
-animation:scroll 40s linear infinite;
+transition:transform 0.5s ease;
 }
 
 .slide-track img{
@@ -181,10 +181,6 @@ margin:10px;
 border-radius:10px;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(calc(-200px * 12));}
-}  
 /* SLIDER ARROWS */
 
 .slider{
@@ -356,13 +352,13 @@ Book Tattoo on WhatsApp
 let sliderPosition = 0;
 
 function moveSlider(amount){
-sliderPosition += amount;
-
+Position += amount;
 document.getElementById("slideTrack").style.transform =
 "translateX(" + sliderPosition + "px)";
 }
 
 </script>
+  
 </body>
 
 </html>
