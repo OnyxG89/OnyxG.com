@@ -22,49 +22,68 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* HERO LOGO */
+/* HERO VIDEO */
 
 .hero{
-height:70vh;
+position:relative;
+height:100vh;
+overflow:hidden;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:rgba(0,0,0,0.7);
 }
+
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+/* LOGO */
 
 .logo{
 
-font-size:90px;
+font-size:110px;
 font-weight:900;
-letter-spacing:6px;
+letter-spacing:8px;
 
-background:linear-gradient(45deg,#ffffff,#bdbdbd,#ffffff);
+background:linear-gradient(45deg,#ffffff,#bbbbbb,#ffffff);
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
 text-shadow:
-0 5px 15px rgba(0,0,0,0.7),
-0 10px 40px rgba(0,0,0,0.6);
+0 10px 30px rgba(0,0,0,0.9),
+0 20px 60px rgba(0,0,0,0.8);
 
 }
 
+/* TAGLINE */
+
 .tagline{
-font-size:20px;
-letter-spacing:3px;
+font-size:22px;
+letter-spacing:4px;
 margin-top:10px;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
+
 background:rgba(0,0,0,0.75);
+
 margin:40px;
 padding:40px;
+
 border-radius:12px;
+
 text-align:center;
+
 }
 
 /* GRID */
@@ -77,21 +96,46 @@ gap:20px;
 
 /* IMAGES */
 
-img{
+.gallery img{
+
 width:100%;
 border-radius:10px;
+cursor:pointer;
+
 transition:0.4s;
 }
 
-img:hover{
-transform:scale(1.07);
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
+.gallery img:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.8);
+
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
 }
 
 /* VIDEOS */
 
 video{
-width:330px;
+width:340px;
 margin:15px;
 border-radius:10px;
 }
@@ -101,6 +145,7 @@ border-radius:10px;
 .studio img{
 height:300px;
 object-fit:cover;
+border-radius:10px;
 }
 
 /* CEO */
@@ -122,12 +167,14 @@ background:#25D366;
 color:white;
 
 padding:16px 28px;
+
 border-radius:40px;
 
 text-decoration:none;
+
 font-weight:bold;
 
-box-shadow:0 5px 15px rgba(0,0,0,0.5);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 
 }
 
@@ -137,9 +184,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 
 <body>
 
-<!-- HERO -->
+<!-- HERO VIDEO -->
 
 <div class="hero">
+
+<video autoplay muted loop>
+<source src="video3.mp4">
+</video>
+
+<div>
 
 <div class="logo">ONYX G</div>
 
@@ -147,13 +200,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 
 </div>
 
-<!-- TATTOO DESIGNS -->
+</div>
+
+<!-- TATTOO GALLERY -->
 
 <section>
 
 <h2>Tattoo Designs</h2>
 
-<div class="grid">
+<div class="grid gallery">
 
 <img src="butterfly.jpg">
 <img src="cherry.jpg">
@@ -168,18 +223,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 <img src="king of myself.png">
 <img src="Real.jpg">
 
-</div>
-
-</section>
-
-<!-- LETTERING -->
-
-<section>
-
-<h2>Lettering Tattoos</h2>
-
-<div class="grid">
-
 <img src="F.O.E.jpg">
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
@@ -188,7 +231,11 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 
 </section>
 
-<!-- REAL WORK -->
+<div class="lightbox" id="lightbox">
+<img src="">
+</div>
+
+<!-- REAL TATTOO WORK -->
 
 <section>
 
@@ -252,7 +299,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.5);
 
 <p>
 
-Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to creating bold designs, powerful symbolism and meaningful body art.
+Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to bold artwork, meaningful symbolism and premium tattoo experiences.
 
 </p>
 
@@ -263,6 +310,25 @@ Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to creating bo
 Book Tattoo on WhatsApp
 
 </a>
+
+<script>
+
+const gallery=document.querySelectorAll(".gallery img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=lightbox.querySelector("img");
+
+gallery.forEach(img=>{
+img.onclick=()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+}
+})
+
+lightbox.onclick=()=>{
+lightbox.style.display="none";
+}
+
+</script>
 
 </body>
 
