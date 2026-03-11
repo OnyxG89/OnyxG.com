@@ -145,6 +145,32 @@ margin-top:-20px;
 font-size:20px;
 margin-top:10px;
 }
+/* SLIDER */
+
+.slider{
+overflow:hidden;
+max-width:1000px;
+margin:auto;
+}
+
+.slide-track{
+display:flex;
+width:calc(200px * 24);
+animation:scroll 40s linear infinite;
+}
+
+.slide-track img{
+width:200px;
+height:200px;
+object-fit:cover;
+margin:10px;
+border-radius:10px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(calc(-200px * 12));}
+}  
 </style>
 
 </head>
