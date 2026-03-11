@@ -5,7 +5,6 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ONYX G INK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -18,20 +17,26 @@ body{
 margin:0;
 font-family:Arial;
 color:white;
-overflow-x:hidden;
+
+background-image:url("studio2.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-/* VIDEO BACKGROUND */
+/* HERO */
 
 .hero{
 position:relative;
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 }
+
+/* VIDEO BACKGROUND */
 
 .hero video{
 position:absolute;
@@ -43,23 +48,31 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* LOGO */
+/* 3D LOGO */
 
 .logo{
+
 font-family:'Cinzel',serif;
+
 font-size:120px;
 letter-spacing:8px;
 
-background:linear-gradient(45deg,#FFD700,#D4AF37,#FFD700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+color:#FFD700;
 
-text-shadow:0 10px 40px rgba(0,0,0,0.9);
+text-shadow:
+0 3px 0 #b89600,
+0 6px 0 #a88400,
+0 9px 0 #8c6f00,
+0 12px 20px rgba(0,0,0,0.8);
+
 }
+
+/* TAGLINE */
 
 .tagline{
 font-family:'Great Vibes',cursive;
 font-size:40px;
+margin-top:10px;
 }
 
 /* SECTION */
@@ -73,13 +86,12 @@ text-align:center;
 
 .slider{
 overflow:hidden;
-position:relative;
 width:100%;
 }
 
 .slide-track{
 display:flex;
-animation:scroll 40s linear infinite;
+animation:scroll 45s linear infinite;
 }
 
 .slide-track img{
@@ -161,15 +173,16 @@ font-weight:bold;
 <div class="hero">
 
 <video autoplay muted loop>
-<source src="video3.mp4" type="video/mp4">
+<source src="video8.mp4" type="video/mp4">
 </video>
 
 <div class="logo">ONYX G</div>
+
 <div class="tagline">Ink Your Story</div>
 
 </div>
 
-<!-- SLIDING GALLERY -->
+<!-- TATTOO SLIDER -->
 
 <section>
 
@@ -194,19 +207,10 @@ font-weight:bold;
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
 
-<!-- duplicated for smooth infinite slide -->
-
 <img src="butterfly.jpg">
 <img src="cherry.jpg">
 <img src="Cross.jpg">
 <img src="Death bf Dishonor.jpg">
-<img src="Dolfins.jpg">
-<img src="eagle.jpg">
-<img src="flower.jpg">
-<img src="heart.jpg">
-<img src="wolf.jpg">
-<img src="king of myself.png">
-<img src="Real.jpg">
 
 </div>
 
@@ -223,23 +227,11 @@ font-weight:bold;
 <div class="video-grid">
 
 <video controls>
-<source src="video1.mp4">
+<source src="video7.mp4">
 </video>
 
 <video controls>
-<source src="video2.mp4">
-</video>
-
-<video controls>
-<source src="video3.mp4">
-</video>
-
-<video controls>
-<source src="video4.mp4">
-</video>
-
-<video controls>
-<source src="video5.mp4">
+<source src="ink-on-skin.mp4">
 </video>
 
 </div>
@@ -271,7 +263,10 @@ font-weight:bold;
 <img src="C.E.O.jpg">
 
 <p>
-Onyx G — founder of ONYX G INK. A tattoo artist dedicated to powerful symbolism and premium tattoo art.
+
+Onyx G — founder of ONYX G INK.
+A tattoo artist dedicated to powerful symbolism and premium tattoo art.
+
 </p>
 
 </section>
