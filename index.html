@@ -11,8 +11,6 @@
 
 <style>
 
-/* BODY */
-
 body{
 margin:0;
 font-family:Arial;
@@ -28,15 +26,13 @@ background-attachment:fixed;
 
 .hero{
 position:relative;
-height:100vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 }
-
-/* VIDEO BACKGROUND */
 
 .hero video{
 position:absolute;
@@ -48,31 +44,24 @@ object-fit:cover;
 z-index:-1;
 }
 
-/* 3D LOGO */
+/* LOGO */
 
 .logo{
-
 font-family:'Cinzel',serif;
-
 font-size:120px;
 letter-spacing:8px;
-
 color:#FFD700;
 
 text-shadow:
 0 3px 0 #b89600,
 0 6px 0 #a88400,
 0 9px 0 #8c6f00,
-0 12px 20px rgba(0,0,0,0.8);
-
+0 12px 25px rgba(0,0,0,0.9);
 }
-
-/* TAGLINE */
 
 .tagline{
 font-family:'Great Vibes',cursive;
 font-size:40px;
-margin-top:10px;
 }
 
 /* SECTION */
@@ -82,39 +71,61 @@ padding:60px;
 text-align:center;
 }
 
+/* CATEGORY TITLE */
+
+.category{
+font-size:28px;
+margin-top:40px;
+}
+
 /* SLIDER */
 
 .slider{
+position:relative;
 overflow:hidden;
-width:100%;
 }
 
 .slide-track{
 display:flex;
-animation:scroll 45s linear infinite;
+transition:transform 0.5s;
 }
 
 .slide-track img{
-height:260px;
+height:250px;
 margin:15px;
 border-radius:10px;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+/* ARROWS */
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+cursor:pointer;
+padding:10px;
+background:black;
 }
 
-/* VIDEO GRID */
+.arrow-left{
+left:10px;
+}
+
+.arrow-right{
+right:10px;
+}
+
+/* VIDEO */
 
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
 video{
-width:100%;
+width:220px;
 border-radius:10px;
 }
 
@@ -142,10 +153,9 @@ border-radius:10px;
 
 .social a{
 display:block;
-margin:8px;
+margin:6px;
 color:#FFD700;
 text-decoration:none;
-font-size:18px;
 }
 
 /* WHATSAPP */
@@ -168,7 +178,7 @@ font-weight:bold;
 
 <body>
 
-<!-- HERO VIDEO -->
+<!-- HERO -->
 
 <div class="hero">
 
@@ -177,54 +187,84 @@ font-weight:bold;
 </video>
 
 <div class="logo">ONYX G</div>
-
 <div class="tagline">Ink Your Story</div>
 
 </div>
 
-<!-- TATTOO SLIDER -->
+<!-- LETTERING TATTOOS -->
 
 <section>
 
-<h2>Tattoo Catalog</h2>
+<h2 class="category">Lettering Tattoos</h2>
 
 <div class="slider">
 
-<div class="slide-track">
+<div class="arrow arrow-left" onclick="slideLeft()">❮</div>
 
-<img src="butterfly.jpg">
-<img src="cherry.jpg">
-<img src="Cross.jpg">
-<img src="Death bf Dishonor.jpg">
-<img src="Dolfins.jpg">
-<img src="eagle.jpg">
-<img src="flower.jpg">
-<img src="heart.jpg">
-<img src="wolf.jpg">
-<img src="king of myself.png">
-<img src="Real.jpg">
+<div class="slide-track" id="slider">
+
 <img src="F.O.E.jpg">
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
 
-<img src="butterfly.jpg">
-<img src="cherry.jpg">
 <img src="Cross.jpg">
-<img src="Death bf Dishonor.jpg">
+<img src="Real.jpg">
 
 </div>
+
+<div class="arrow arrow-right" onclick="slideRight()">❯</div>
 
 </div>
 
 </section>
 
-<!-- LIVE TATTOO VIDEOS -->
+<!-- ARM / ANIMAL TATTOOS -->
+
+<section>
+
+<h2 class="category">Arm & Symbol Tattoos</h2>
+
+<div class="slider">
+
+<div class="arrow arrow-left" onclick="slideLeft()">❮</div>
+
+<div class="slide-track">
+
+<img src="butterfly.jpg">
+<img src="cherry.jpg">
+<img src="Dolfins.jpg">
+<img src="eagle.jpg">
+<img src="wolf.jpg">
+<img src="flower.jpg">
+<img src="heart.jpg">
+
+</div>
+
+<div class="arrow arrow-right" onclick="slideRight()">❯</div>
+
+</div>
+
+</section>
+
+<!-- TATTOO VIDEOS -->
 
 <section>
 
 <h2>Live Tattoo Sessions</h2>
 
 <div class="video-grid">
+
+<video controls>
+<source src="video1.mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4">
+</video>
+
+<video controls>
+<source src="video4.mp4">
+</video>
 
 <video controls>
 <source src="video7.mp4">
@@ -290,6 +330,22 @@ A tattoo artist dedicated to powerful symbolism and premium tattoo art.
 <a class="whatsapp" href="https://wa.me/234706207789">
 Book Tattoo on WhatsApp
 </a>
+
+<script>
+
+let position=0;
+
+function slideLeft(){
+position+=200;
+document.getElementById("slider").style.transform=`translateX(${position}px)`;
+}
+
+function slideRight(){
+position-=200;
+document.getElementById("slider").style.transform=`translateX(${position}px)`;
+}
+
+</script>
 
 </body>
 
