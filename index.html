@@ -3,9 +3,12 @@
 <html>
 
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>ONYX G INK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
@@ -22,56 +25,55 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* HERO VIDEO */
+/* HERO */
 
 .hero{
-position:relative;
+
 height:100vh;
-overflow:hidden;
+
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-}
 
-.hero video{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
+background:rgba(0,0,0,0.75);
+
 }
 
 /* LOGO */
 
 .logo{
 
+font-family:'Cinzel',serif;
+
 font-size:110px;
-font-weight:900;
+
 letter-spacing:8px;
 
-background:linear-gradient(45deg,#ffffff,#bbbbbb,#ffffff);
+background:linear-gradient(45deg,#FFD700,#D4AF37,#FFD700);
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
 text-shadow:
-0 10px 30px rgba(0,0,0,0.9),
-0 20px 60px rgba(0,0,0,0.8);
+0 10px 30px rgba(0,0,0,0.8),
+0 20px 60px rgba(0,0,0,0.7);
 
 }
 
 /* TAGLINE */
 
 .tagline{
-font-size:22px;
-letter-spacing:4px;
+
+font-family:'Great Vibes',cursive;
+
+font-size:40px;
+
 margin-top:10px;
+
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
 
@@ -89,12 +91,16 @@ text-align:center;
 /* GRID */
 
 .grid{
+
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
 gap:20px;
+
 }
 
-/* IMAGES */
+/* GALLERY */
 
 .gallery img{
 
@@ -103,56 +109,98 @@ border-radius:10px;
 cursor:pointer;
 
 transition:0.4s;
+
 }
 
 .gallery img:hover{
 
 transform:scale(1.08);
 
-box-shadow:0 15px 40px rgba(0,0,0,0.8);
+box-shadow:0 10px 30px rgba(0,0,0,0.8);
 
 }
 
 /* LIGHTBOX */
 
 .lightbox{
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:rgba(0,0,0,0.95);
+
 display:none;
+
 justify-content:center;
 align-items:center;
+
 }
 
 .lightbox img{
+
 max-width:90%;
 max-height:90%;
+
 }
 
 /* VIDEOS */
 
+.video-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:20px;
+
+}
+
 video{
-width:340px;
-margin:15px;
+
+width:100%;
 border-radius:10px;
+
 }
 
 /* STUDIO */
 
 .studio img{
+
 height:300px;
 object-fit:cover;
 border-radius:10px;
+
 }
 
 /* CEO */
 
 .ceo img{
+
 width:260px;
 border-radius:10px;
+
+}
+
+/* SOCIAL */
+
+.social{
+
+font-size:18px;
+
+}
+
+.social a{
+
+color:#FFD700;
+text-decoration:none;
+
+display:block;
+margin:8px;
+
 }
 
 /* WHATSAPP */
@@ -160,10 +208,12 @@ border-radius:10px;
 .whatsapp{
 
 position:fixed;
+
 bottom:20px;
 right:20px;
 
 background:#25D366;
+
 color:white;
 
 padding:16px 28px;
@@ -174,8 +224,6 @@ text-decoration:none;
 
 font-weight:bold;
 
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
-
 }
 
 </style>
@@ -184,25 +232,17 @@ box-shadow:0 10px 30px rgba(0,0,0,0.6);
 
 <body>
 
-<!-- HERO VIDEO -->
+<!-- HERO -->
 
 <div class="hero">
 
-<video autoplay muted loop>
-<source src="video3.mp4">
-</video>
-
-<div>
-
 <div class="logo">ONYX G</div>
 
-<div class="tagline">Premium Tattoo Studio</div>
+<div class="tagline">Ink Your Story</div>
 
 </div>
 
-</div>
-
-<!-- TATTOO GALLERY -->
+<!-- GALLERY -->
 
 <section>
 
@@ -241,35 +281,39 @@ box-shadow:0 10px 30px rgba(0,0,0,0.6);
 
 <h2>Real Tattoo Work</h2>
 
-<img src="ink-on-skin.jpg">
+<img src="studio1.jpg">
 
 </section>
 
-<!-- VIDEOS -->
+<!-- TATTOO VIDEOS -->
 
 <section>
 
 <h2>Live Tattoo Sessions</h2>
 
+<div class="video-grid">
+
 <video controls>
-<source src="video1.mp4">
+<source src="video1.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="video2.mp4">
+<source src="video2.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="video3.mp4">
+<source src="video3.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="video4.mp4">
+<source src="video4.mp4" type="video/mp4">
 </video>
 
 <video controls>
-<source src="video5.mp4">
+<source src="video5.mp4" type="video/mp4">
 </video>
+
+</div>
 
 </section>
 
@@ -299,9 +343,25 @@ box-shadow:0 10px 30px rgba(0,0,0,0.6);
 
 <p>
 
-Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to bold artwork, meaningful symbolism and premium tattoo experiences.
+Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to powerful symbolism and premium tattoo art.
 
 </p>
+
+</section>
+
+<!-- SOCIAL MEDIA -->
+
+<section class="social">
+
+<h2>Follow ONYX G</h2>
+
+<a href="https://instagram.com/samuelvic36">Instagram: @samuelvic36</a>
+
+<a href="#">Facebook</a>
+
+<a href="https://tiktok.com/@onyx_g35">TikTok: @onyx_g35</a>
+
+<a href="#">Snapchat: sammyvictor36</a>
 
 </section>
 
