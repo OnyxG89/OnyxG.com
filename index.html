@@ -8,7 +8,7 @@
 
 <title>ONYX G INK</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,27 +16,41 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Poppins;
 color:white;
 background:url("studio2.jpg") center/cover fixed;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+z-index:1000;
+}
+
+nav a{
+color:#FFD700;
+text-decoration:none;
+font-weight:600;
 }
 
 /* HERO */
 
 .hero{
-position:relative;
-height:90vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
 }
 
 .hero video{
@@ -51,22 +65,28 @@ z-index:-1;
 
 .logo{
 font-family:'Cinzel',serif;
-font-size:100px;
+font-size:110px;
 color:#FFD700;
 
 text-shadow:
-0 3px 0 #caa400,
-0 6px 0 #a88a00,
-0 9px 0 #866e00,
-0 12px 30px rgba(0,0,0,0.9);
+0 4px 0 #caa400,
+0 8px 0 #a88a00,
+0 12px 0 #866e00,
+0 20px 40px rgba(0,0,0,0.9);
 }
 
 .tagline{
 font-family:'Great Vibes',cursive;
-font-size:36px;
+font-size:38px;
 }
 
-/* TITLES */
+/* CONTAINER */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
 
 h2{
 text-align:center;
@@ -76,12 +96,13 @@ margin-bottom:30px;
 /* SLIDER */
 
 .slider{
-position:relative;
 overflow:hidden;
+position:relative;
 }
 
 .slide-track{
 display:flex;
+gap:15px;
 transition:0.5s;
 }
 
@@ -89,8 +110,12 @@ transition:0.5s;
 width:220px;
 height:220px;
 object-fit:cover;
-margin:10px;
 border-radius:10px;
+transition:0.3s;
+}
+
+.slide-track img:hover{
+transform:scale(1.1);
 }
 
 /* ARROWS */
@@ -101,17 +126,17 @@ top:50%;
 font-size:40px;
 cursor:pointer;
 background:black;
-padding:8px;
+padding:6px 12px;
 }
 
-.left{left:10px;}
-.right{right:10px;}
+.left{left:0;}
+.right{right:0;}
 
 /* VIDEO GRID */
 
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
@@ -120,7 +145,7 @@ width:100%;
 border-radius:10px;
 }
 
-/* STUDIO */
+/* STUDIO GRID */
 
 .studio{
 display:grid;
@@ -140,9 +165,10 @@ border-radius:10px;
 .price{
 max-width:500px;
 margin:auto;
+text-align:center;
 }
 
-/* FORM */
+/* BOOKING */
 
 form{
 max-width:500px;
@@ -164,6 +190,14 @@ font-weight:bold;
 cursor:pointer;
 }
 
+/* MAP */
+
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+}
+
 /* SOCIAL */
 
 .social{
@@ -175,14 +209,6 @@ display:block;
 color:#FFD700;
 margin:6px;
 text-decoration:none;
-}
-
-/* MAP */
-
-.map iframe{
-width:100%;
-height:350px;
-border:0;
 }
 
 /* WHATSAPP */
@@ -198,11 +224,34 @@ color:white;
 text-decoration:none;
 }
 
+/* MOBILE */
+
+@media(max-width:700px){
+
+.logo{
+font-size:60px;
+}
+
+.slide-track img{
+width:160px;
+height:160px;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
+
+<!-- NAV -->
+
+<nav>
+
+<a href="#gallery">Gallery</a> <a href="#videos">Videos</a> <a href="#studio">Studio</a> <a href="#pricing">Prices</a> <a href="#booking">Booking</a>
+
+</nav>
 
 <!-- HERO -->
 
@@ -219,7 +268,7 @@ text-decoration:none;
 
 <!-- LETTERING -->
 
-<div class="container">
+<div class="container" id="gallery">
 
 <h2>Lettering Tattoos</h2>
 
@@ -249,8 +298,6 @@ text-decoration:none;
 
 <h2>Symbol & Arm Tattoos</h2>
 
-<div class="slider">
-
 <div class="slide-track">
 
 <img src="butterfly.jpg">
@@ -265,11 +312,9 @@ text-decoration:none;
 
 </div>
 
-</div>
-
 <!-- VIDEOS -->
 
-<div class="container">
+<div class="container" id="videos">
 
 <h2>Live Tattoo Sessions</h2>
 
@@ -283,11 +328,9 @@ text-decoration:none;
 
 <!-- STUDIO -->
 
-<div class="container">
+<div class="container studio" id="studio">
 
 <h2>Inside The Studio</h2>
-
-<div class="studio">
 
 <img src="studio1.jpg">
 <img src="studio2.jpg">
@@ -295,11 +338,9 @@ text-decoration:none;
 
 </div>
 
-</div>
-
 <!-- PRICE -->
 
-<div class="container price">
+<div class="container price" id="pricing">
 
 <h2>Tattoo Price List</h2>
 
@@ -313,9 +354,9 @@ text-decoration:none;
 
 <!-- BOOKING -->
 
-<div class="container">
+<div class="container" id="booking">
 
-<h2>Book Appointment</h2>
+<h2>Book Tattoo Appointment</h2>
 
 <form>
 
