@@ -5,6 +5,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>ONYX G INK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -56,7 +57,7 @@ text-shadow:
 0 3px 0 #b89600,
 0 6px 0 #a88400,
 0 9px 0 #8c6f00,
-0 12px 25px rgba(0,0,0,0.9);
+0 12px 30px rgba(0,0,0,0.9);
 }
 
 .tagline{
@@ -71,58 +72,22 @@ padding:60px;
 text-align:center;
 }
 
-/* CATEGORY TITLE */
+/* GRID */
 
-.category{
-font-size:28px;
-margin-top:40px;
-}
-
-/* SLIDER */
-
-.slider{
-position:relative;
-overflow:hidden;
-}
-
-.slide-track{
-display:flex;
-transition:transform 0.5s;
-}
-
-.slide-track img{
-height:250px;
-margin:15px;
-border-radius:10px;
-}
-
-/* ARROWS */
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:40px;
-cursor:pointer;
-padding:10px;
-background:black;
-}
-
-.arrow-left{
-left:10px;
-}
-
-.arrow-right{
-right:10px;
-}
-
-/* VIDEO */
-
-.video-grid{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
+
+/* IMAGES */
+
+img{
+width:100%;
+border-radius:10px;
+}
+
+/* VIDEO */
 
 video{
 width:220px;
@@ -131,29 +96,50 @@ border-radius:10px;
 
 /* STUDIO */
 
-.studio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
 .studio img{
-width:100%;
-border-radius:10px;
+height:300px;
+object-fit:cover;
 }
 
-/* CEO */
+/* PRICE LIST */
 
-.ceo img{
-width:260px;
-border-radius:10px;
+.pricing{
+max-width:600px;
+margin:auto;
+text-align:left;
+}
+
+.pricing li{
+margin:8px 0;
+}
+
+/* BOOKING FORM */
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input,textarea,button{
+padding:10px;
+border-radius:6px;
+border:none;
+}
+
+button{
+background:#FFD700;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* SOCIAL */
 
 .social a{
 display:block;
-margin:6px;
+margin:8px;
 color:#FFD700;
 text-decoration:none;
 }
@@ -191,68 +177,41 @@ font-weight:bold;
 
 </div>
 
-<!-- LETTERING TATTOOS -->
+<!-- TATTOO GALLERY -->
 
 <section>
 
-<h2 class="category">Lettering Tattoos</h2>
+<h2>Tattoo Designs</h2>
 
-<div class="slider">
+<div class="grid">
 
-<div class="arrow arrow-left" onclick="slideLeft()">❮</div>
-
-<div class="slide-track" id="slider">
+<img src="butterfly.jpg">
+<img src="cherry.jpg">
+<img src="Cross.jpg">
+<img src="Death bf Dishonor.jpg">
+<img src="Dolfins.jpg">
+<img src="eagle.jpg">
+<img src="flower.jpg">
+<img src="heart.jpg">
+<img src="wolf.jpg">
+<img src="king of myself.png">
+<img src="Real.jpg">
 
 <img src="F.O.E.jpg">
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
 
-<img src="Cross.jpg">
-<img src="Real.jpg">
-
-</div>
-
-<div class="arrow arrow-right" onclick="slideRight()">❯</div>
-
 </div>
 
 </section>
 
-<!-- ARM / ANIMAL TATTOOS -->
-
-<section>
-
-<h2 class="category">Arm & Symbol Tattoos</h2>
-
-<div class="slider">
-
-<div class="arrow arrow-left" onclick="slideLeft()">❮</div>
-
-<div class="slide-track">
-
-<img src="butterfly.jpg">
-<img src="cherry.jpg">
-<img src="Dolfins.jpg">
-<img src="eagle.jpg">
-<img src="wolf.jpg">
-<img src="flower.jpg">
-<img src="heart.jpg">
-
-</div>
-
-<div class="arrow arrow-right" onclick="slideRight()">❯</div>
-
-</div>
-
-</section>
-
-<!-- TATTOO VIDEOS -->
+<!-- VIDEOS -->
 
 <section>
 
 <h2>Live Tattoo Sessions</h2>
 
-<div class="video-grid">
+<div class="grid">
 
 <video controls>
 <source src="video1.mp4">
@@ -284,7 +243,7 @@ font-weight:bold;
 
 <h2>Inside The Studio</h2>
 
-<div class="studio">
+<div class="grid studio">
 
 <img src="studio1.jpg">
 <img src="studio2.jpg">
@@ -296,18 +255,82 @@ font-weight:bold;
 
 <!-- CEO -->
 
-<section class="ceo">
+<section>
 
 <h2>Founder & Artist</h2>
 
-<img src="C.E.O.jpg">
+<img src="C.E.O.jpg" width="260">
 
 <p>
-
-Onyx G — founder of ONYX G INK.
-A tattoo artist dedicated to powerful symbolism and premium tattoo art.
-
+Onyx G — founder of ONYX G INK. A tattoo artist dedicated to powerful symbolism and premium tattoo art.
 </p>
+
+</section>
+
+<!-- PRICE LIST -->
+
+<section>
+
+<h2>Tattoo Price List</h2>
+
+<ul class="pricing">
+
+<li>Small Tattoos — $50+</li>
+<li>Medium Tattoos — $120+</li>
+<li>Large Tattoos — $250+</li>
+<li>Sleeve Tattoos — $600+</li>
+<li>Custom Designs — Price depends on complexity</li>
+
+</ul>
+
+</section>
+
+<!-- BOOKING -->
+
+<section>
+
+<h2>Book a Tattoo Appointment</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea placeholder="Describe your tattoo idea"></textarea>
+
+<button>Submit Booking Request</button>
+
+</form>
+
+</section>
+
+<!-- MAP -->
+
+<section>
+
+<h2>Studio Location</h2>
+
+<iframe
+width="100%"
+height="400"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://www.google.com/maps?q=Ibadan,Nigeria&output=embed">
+</iframe>
+
+</section>
+
+<!-- INSTAGRAM -->
+
+<section>
+
+<h2>Instagram Tattoos</h2>
+
+<p>Follow the latest tattoos on Instagram.</p>
+
+<a href="https://instagram.com/samuelvic36">View Instagram Gallery</a>
 
 </section>
 
@@ -330,22 +353,6 @@ A tattoo artist dedicated to powerful symbolism and premium tattoo art.
 <a class="whatsapp" href="https://wa.me/234706207789">
 Book Tattoo on WhatsApp
 </a>
-
-<script>
-
-let position=0;
-
-function slideLeft(){
-position+=200;
-document.getElementById("slider").style.transform=`translateX(${position}px)`;
-}
-
-function slideRight(){
-position-=200;
-document.getElementById("slider").style.transform=`translateX(${position}px)`;
-}
-
-</script>
 
 </body>
 
