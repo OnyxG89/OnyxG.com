@@ -182,6 +182,11 @@ height:200px;
 object-fit:cover;
 margin:10px;
 border-radius:10px;
+transition:transform 0.3s ease;
+}
+
+.slide-track img:hover{
+transform:scale(1.1);
 }
 
 /* SLIDER ARROWS */
@@ -211,6 +216,19 @@ left:-20px;
 .arrow-right{
 right:-20px;
 }
+ .catalog-title{
+font-size:40px;
+margin-bottom:10px;
+letter-spacing:3px;
+}
+
+.divider{
+width:120px;
+height:4px;
+background:#FFD700;
+margin:20px auto 40px auto;
+border-radius:3px;
+} 
 </style>
 
 </head>
@@ -235,7 +253,11 @@ Custom Tattoos • Professional Studio • Unique Designs
 
 <section>
 
-<div class="slide-track" id="slideTrack">
+<h2 class="catalog-title">Tattoo Catalog</h2>
+
+<div class="divider"></div>
+
+<div class="slider">
 
 <div class="arrow arrow-left" onclick="moveSlider(200)">❮</div>
 <div class="arrow arrow-right" onclick="moveSlider(-200)">❯</div>
