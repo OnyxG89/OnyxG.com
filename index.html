@@ -1,62 +1,58 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ONYX G INK</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
-font-family:Poppins, sans-serif;
-background:linear-gradient(180deg,#2b1b10,#5a3a1b,#a8732b);
-color:white;
-overflow-x:hidden
+font-family:Poppins;
+background:linear-gradient(180deg,#f4d7a5,#c88a40,#6a3a0f);
+color:#111;
 }
+
+/* HEADER */
 
 header{
 position:fixed;
 top:0;
 width:100%;
 padding:18px 40px;
-background:rgba(0,0,0,0.65);
-backdrop-filter:blur(6px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:1000
+background:rgba(255,255,255,0.9);
+z-index:1000;
 }
 
 .logo{
-font-family:Cinzel,serif;
-font-size:34px;
+font-family:Cinzel;
+font-size:32px;
 letter-spacing:4px;
-color:#ffd27a;
-text-shadow:0 4px 12px rgba(0,0,0,0.8),0 0 8px #d4af37;
+color:#5a3a12;
 }
 
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#eee;
-font-size:14px
-}
-
-nav a:hover{color:#ffd27a}
+/* HERO VIDEO */
 
 .hero{
 height:100vh;
 position:relative;
-overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center
+text-align:center;
 }
 
 .hero video{
@@ -64,41 +60,38 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-1
+z-index:-1;
 }
 
-.hero-content h1{
-font-family:Cinzel,serif;
+.hero h1{
+font-family:Cinzel;
 font-size:90px;
-letter-spacing:6px;
-color:#ffd27a;
-text-shadow:0 8px 25px rgba(0,0,0,0.9);
-margin:0
+color:white;
+text-shadow:0 10px 30px black;
 }
 
-.hero-content p{
-font-size:20px;
-margin-top:10px
-}
+/* SECTION */
 
 section{
 padding:90px 8%;
 max-width:1300px;
-margin:auto
+margin:auto;
 }
 
 h2{
+font-family:Cinzel;
 text-align:center;
-font-family:Cinzel,serif;
 font-size:36px;
 margin-bottom:40px;
-color:#ffd27a
+color:#5a3a12;
 }
+
+/* TATTOO GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .gallery img{
@@ -107,10 +100,14 @@ height:320px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
-transition:0.4s
+transition:0.3s;
 }
 
-.gallery img:hover{transform:scale(1.05)}
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
 
 .lightbox{
 position:fixed;
@@ -122,43 +119,60 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:2000
 }
 
 .lightbox img{
 max-width:90%;
 max-height:90%;
-border-radius:10px
 }
 
-.video-section{
-text-align:center
+/* VIDEO GRID */
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
-.video-section video{
+video{
 width:100%;
-max-width:600px;
-border-radius:12px;
-box-shadow:0 15px 35px rgba(0,0,0,0.7)
+border-radius:10px;
 }
+
+/* STUDIO */
+
+.studio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.studio img{
+width:100%;
+border-radius:10px;
+}
+
+/* CEO */
 
 .ceo{
 display:flex;
 flex-wrap:wrap;
-align-items:center;
 gap:40px;
-justify-content:center
+align-items:center;
+justify-content:center;
 }
 
 .ceo img{
 width:260px;
-border-radius:12px;
-box-shadow:0 15px 40px rgba(0,0,0,0.8)
+border-radius:10px;
+cursor:pointer;
 }
 
 .ceo-text{
-max-width:500px
+max-width:500px;
 }
+
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -168,59 +182,50 @@ background:#25D366;
 color:white;
 padding:16px 22px;
 border-radius:40px;
-font-size:14px;
 text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.7)
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#eee
+font-size:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 <div class="logo">ONYX G INK</div>
-<nav>
-<a href="#gallery">Gallery</a>
-<a href="#video">Studio</a>
-<a href="#ceo">Artist</a>
-</nav>
 </header>
 
+<!-- HERO VIDEO -->
+
 <section class="hero">
+
 <video autoplay muted loop>
-<source src="ink-on-skin.mp4" type="video/mp4">
+<source src="video3.mp4" type="video/mp4">
 </video>
-<div class="hero-content">
+
 <h1>ONYX G</h1>
-<p>Ink Your Story • Live Your Legacy</p>
-</div>
+
 </section>
 
-<section id="gallery">
-<h2>Featured Tattoo Work</h2>
+<!-- TATTOO GALLERY -->
+
+<section>
+
+<h2>Tattoo Work</h2>
 
 <div class="gallery">
+
 <img src="butterfly.jpg">
 <img src="cherry.jpg">
 <img src="Cross.jpg">
-<img src="Death bf Dishonor.jpg">
 <img src="Dolfins.jpg">
 <img src="eagle.jpg">
-<img src="F.O.E.jpg">
 <img src="flower.jpg">
 <img src="heart.jpg">
-<img src="king of myself.png">
-<img src="M.O.E.jpg">
-<img src="O.S.S.jpg">
-<img src="Real.jpg">
 <img src="wolf.jpg">
+
 </div>
 
 </section>
@@ -229,42 +234,75 @@ color:#eee
 <img src="">
 </div>
 
-<section id="video" class="video-section">
-<h2>Inside The Studio</h2>
+<!-- TATTOO SESSION VIDEOS -->
+
+<section>
+
+<h2>Tattoo Sessions</h2>
+
+<div class="video-grid">
+
 <video controls>
-<source src="video1.mp4" type="video/mp4">
+<source src="video4.mp4">
 </video>
+
+<video controls>
+<source src="video5.mp4">
+</video>
+
+</div>
+
 </section>
 
-<section id="ceo">
+<!-- STUDIO PHOTOS -->
+
+<section>
+
+<h2>Inside Our Studio</h2>
+
+<div class="studio">
+
+<img src="studio1.jpg">
+<img src="studio2.jpg">
+<img src="Studio3.jpg">
+
+</div>
+
+</section>
+
+<!-- CEO SECTION -->
+
+<section>
+
 <h2>Founder & Artist</h2>
 
 <div class="ceo">
-<img src="C.E.O.jpg">
+
+<img src="ceo.jpg" class="ceo-photo">
 
 <div class="ceo-text">
-<p><strong>Onyx G</strong> is the creative force behind Onyx G Ink. Known for bold, detailed and expressive tattoo work, the studio focuses on turning personal stories into lasting art.</p>
 
-<p>Every tattoo is crafted with precision, creativity and passion. The goal is simple — deliver powerful ink that represents identity, loyalty and legacy.</p>
+<p><strong>Onyx G</strong> is the founder of Onyx G Ink, known for bold tattoo artistry that turns personal stories into powerful body art.</p>
+
+<p>The studio focuses on creativity, precision and designs that represent identity and legacy.</p>
+
 </div>
 
 </div>
 
 </section>
 
-<a class="whatsapp" href="https://wa.me/234706207789">Book on WhatsApp</a>
-
-<footer>
-ONYX G INK • Professional Tattoo Studio
-</footer>
+<a class="whatsapp" href="https://wa.me/234706207789">
+Book on WhatsApp
+</a>
 
 <script>
 
-const images=document.querySelectorAll('.gallery img');
+const imgs=document.querySelectorAll('.gallery img,.ceo-photo');
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=lightbox.querySelector('img');
 
-images.forEach(img=>{
+imgs.forEach(img=>{
 img.onclick=()=>{
 lightbox.style.display='flex';
 lightboxImg.src=img.src;
