@@ -125,15 +125,29 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
+position:relative;
 }
-
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(255,215,0,0.25), transparent);
+z-index:-1;
+}
 .logo{
-font-size:110px;
+font-size:120px;
 color:#FFD700;
 font-weight:bold;
-letter-spacing:6px;
-text-shadow:0 6px 20px black;
+letter-spacing:8px;
+
+text-shadow:
+0 3px 0 #caa400,
+0 6px 0 #a88a00,
+0 9px 0 #866e00,
+0 12px 30px rgba(0,0,0,0.9),
+0 0 40px rgba(255,215,0,0.6);
 }
 
 .tagline{
