@@ -236,11 +236,10 @@ Custom Tattoos • Professional Studio • Unique Designs
 
 <section>
 
-<div class="slider">
+<div class="slide-track" id="slideTrack">
 
-<div class="arrow arrow-left">❮</div>
-<div class="arrow arrow-right">❯</div>
-
+<div class="arrow arrow-left" onclick="moveSlider(200)">❮</div>
+<div class="arrow arrow-right" onclick="moveSlider(-200)">❯</div>
 <div class="slide-track">
 
 <img src="butterfly.jpg">
@@ -352,7 +351,18 @@ Onyx G — founder of ONYX G INK.
 <a class="whatsapp" href="https://wa.me/234706207789">
 Book Tattoo on WhatsApp
 </a>
+<script>
 
+let sliderPosition = 0;
+
+function moveSlider(amount){
+sliderPosition += amount;
+
+document.getElementById("slideTrack").style.transform =
+"translateX(" + sliderPosition + "px)";
+}
+
+</script>
 </body>
 
 </html>
