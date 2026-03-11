@@ -18,212 +18,136 @@ body{
 margin:0;
 font-family:Arial;
 color:white;
-
-background-image:url("studio2.jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+overflow-x:hidden;
 }
 
-/* HERO */
+/* VIDEO BACKGROUND */
 
 .hero{
-
+position:relative;
 height:100vh;
-
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
+text-align:center;
+}
 
-background:rgba(0,0,0,0.75);
-
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
 }
 
 /* LOGO */
 
 .logo{
-
 font-family:'Cinzel',serif;
-
-font-size:110px;
-
+font-size:120px;
 letter-spacing:8px;
 
 background:linear-gradient(45deg,#FFD700,#D4AF37,#FFD700);
-
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-text-shadow:
-0 10px 30px rgba(0,0,0,0.8),
-0 20px 60px rgba(0,0,0,0.7);
-
+text-shadow:0 10px 40px rgba(0,0,0,0.9);
 }
 
-/* TAGLINE */
-
 .tagline{
-
 font-family:'Great Vibes',cursive;
-
 font-size:40px;
-
-margin-top:10px;
-
 }
 
 /* SECTION */
 
 section{
-
-background:rgba(0,0,0,0.75);
-
-margin:40px;
-padding:40px;
-
-border-radius:12px;
-
+padding:60px;
 text-align:center;
-
 }
 
-/* GRID */
+/* SLIDER */
 
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:20px;
-
-}
-
-/* GALLERY */
-
-.gallery img{
-
+.slider{
+overflow:hidden;
+position:relative;
 width:100%;
+}
+
+.slide-track{
+display:flex;
+animation:scroll 40s linear infinite;
+}
+
+.slide-track img{
+height:260px;
+margin:15px;
 border-radius:10px;
-cursor:pointer;
-
-transition:0.4s;
-
 }
 
-.gallery img:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 10px 30px rgba(0,0,0,0.8);
-
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
-/* LIGHTBOX */
-
-.lightbox{
-
-position:fixed;
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.95);
-
-display:none;
-
-justify-content:center;
-align-items:center;
-
-}
-
-.lightbox img{
-
-max-width:90%;
-max-height:90%;
-
-}
-
-/* VIDEOS */
+/* VIDEO GRID */
 
 .video-grid{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
 gap:20px;
-
 }
 
 video{
-
 width:100%;
 border-radius:10px;
-
 }
 
 /* STUDIO */
 
+.studio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
 .studio img{
-
-height:300px;
-object-fit:cover;
+width:100%;
 border-radius:10px;
-
 }
 
 /* CEO */
 
 .ceo img{
-
 width:260px;
 border-radius:10px;
-
 }
 
 /* SOCIAL */
 
-.social{
-
-font-size:18px;
-
-}
-
 .social a{
-
-color:#FFD700;
-text-decoration:none;
-
 display:block;
 margin:8px;
-
+color:#FFD700;
+text-decoration:none;
+font-size:18px;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
-
 position:fixed;
-
 bottom:20px;
 right:20px;
-
 background:#25D366;
-
 color:white;
-
 padding:16px 28px;
-
 border-radius:40px;
-
 text-decoration:none;
-
 font-weight:bold;
-
 }
 
 </style>
@@ -232,23 +156,28 @@ font-weight:bold;
 
 <body>
 
-<!-- HERO -->
+<!-- HERO VIDEO -->
 
 <div class="hero">
 
-<div class="logo">ONYX G</div>
+<video autoplay muted loop>
+<source src="video3.mp4" type="video/mp4">
+</video>
 
+<div class="logo">ONYX G</div>
 <div class="tagline">Ink Your Story</div>
 
 </div>
 
-<!-- GALLERY -->
+<!-- SLIDING GALLERY -->
 
 <section>
 
-<h2>Tattoo Designs</h2>
+<h2>Tattoo Catalog</h2>
 
-<div class="grid gallery">
+<div class="slider">
+
+<div class="slide-track">
 
 <img src="butterfly.jpg">
 <img src="cherry.jpg">
@@ -259,33 +188,33 @@ font-weight:bold;
 <img src="flower.jpg">
 <img src="heart.jpg">
 <img src="wolf.jpg">
-
 <img src="king of myself.png">
 <img src="Real.jpg">
-
 <img src="F.O.E.jpg">
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
 
+<!-- duplicated for smooth infinite slide -->
+
+<img src="butterfly.jpg">
+<img src="cherry.jpg">
+<img src="Cross.jpg">
+<img src="Death bf Dishonor.jpg">
+<img src="Dolfins.jpg">
+<img src="eagle.jpg">
+<img src="flower.jpg">
+<img src="heart.jpg">
+<img src="wolf.jpg">
+<img src="king of myself.png">
+<img src="Real.jpg">
+
+</div>
+
 </div>
 
 </section>
 
-<div class="lightbox" id="lightbox">
-<img src="">
-</div>
-
-<!-- REAL TATTOO WORK -->
-
-<section>
-
-<h2>Real Tattoo Work</h2>
-
-<img src="studio1.jpg">
-
-</section>
-
-<!-- TATTOO VIDEOS -->
+<!-- LIVE TATTOO VIDEOS -->
 
 <section>
 
@@ -294,23 +223,23 @@ font-weight:bold;
 <div class="video-grid">
 
 <video controls>
-<source src="video1.mp4" type="video/mp4">
+<source src="video1.mp4">
 </video>
 
 <video controls>
-<source src="video2.mp4" type="video/mp4">
+<source src="video2.mp4">
 </video>
 
 <video controls>
-<source src="video3.mp4" type="video/mp4">
+<source src="video3.mp4">
 </video>
 
 <video controls>
-<source src="video4.mp4" type="video/mp4">
+<source src="video4.mp4">
 </video>
 
 <video controls>
-<source src="video5.mp4" type="video/mp4">
+<source src="video5.mp4">
 </video>
 
 </div>
@@ -323,7 +252,7 @@ font-weight:bold;
 
 <h2>Inside The Studio</h2>
 
-<div class="grid studio">
+<div class="studio">
 
 <img src="studio1.jpg">
 <img src="studio2.jpg">
@@ -342,14 +271,12 @@ font-weight:bold;
 <img src="C.E.O.jpg">
 
 <p>
-
-Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to powerful symbolism and premium tattoo art.
-
+Onyx G — founder of ONYX G INK. A tattoo artist dedicated to powerful symbolism and premium tattoo art.
 </p>
 
 </section>
 
-<!-- SOCIAL MEDIA -->
+<!-- SOCIAL -->
 
 <section class="social">
 
@@ -357,7 +284,7 @@ Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to powerful sy
 
 <a href="https://instagram.com/samuelvic36">Instagram: @samuelvic36</a>
 
-<a href="#">Facebook</a>
+<a href="https://facebook.com">Facebook: Onyx Gandolf</a>
 
 <a href="https://tiktok.com/@onyx_g35">TikTok: @onyx_g35</a>
 
@@ -366,29 +293,8 @@ Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to powerful sy
 </section>
 
 <a class="whatsapp" href="https://wa.me/234706207789">
-
 Book Tattoo on WhatsApp
-
 </a>
-
-<script>
-
-const gallery=document.querySelectorAll(".gallery img");
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=lightbox.querySelector("img");
-
-gallery.forEach(img=>{
-img.onclick=()=>{
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
-}
-})
-
-lightbox.onclick=()=>{
-lightbox.style.display="none";
-}
-
-</script>
 
 </body>
 
