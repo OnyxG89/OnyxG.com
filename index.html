@@ -4,13 +4,17 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>ONYX G INK</title>
 
 <style>
 
+/* BODY */
+
 body{
 margin:0;
 font-family:Arial;
+color:white;
 
 background-image:url("studio2.jpg");
 background-size:cover;
@@ -18,16 +22,39 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* HEADER */
+/* HERO LOGO */
 
-header{
-background:black;
-color:white;
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:25px;
-font-size:38px;
-letter-spacing:4px;
-font-weight:bold;
+background:rgba(0,0,0,0.7);
+}
+
+.logo{
+
+font-size:90px;
+font-weight:900;
+letter-spacing:6px;
+
+background:linear-gradient(45deg,#ffffff,#bdbdbd,#ffffff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 5px 15px rgba(0,0,0,0.7),
+0 10px 40px rgba(0,0,0,0.6);
+
+}
+
+.tagline{
+font-size:20px;
+letter-spacing:3px;
+margin-top:10px;
 }
 
 /* SECTION */
@@ -36,9 +63,8 @@ section{
 background:rgba(0,0,0,0.75);
 margin:40px;
 padding:40px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
-color:white;
 }
 
 /* GRID */
@@ -54,17 +80,18 @@ gap:20px;
 img{
 width:100%;
 border-radius:10px;
-transition:0.3s;
+transition:0.4s;
 }
 
 img:hover{
-transform:scale(1.05);
+transform:scale(1.07);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* VIDEOS */
 
 video{
-width:340px;
+width:330px;
 margin:15px;
 border-radius:10px;
 }
@@ -83,20 +110,25 @@ width:260px;
 border-radius:10px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
+
 position:fixed;
 bottom:20px;
 right:20px;
+
 background:#25D366;
 color:white;
+
 padding:16px 28px;
 border-radius:40px;
+
 text-decoration:none;
 font-weight:bold;
-font-size:16px;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+
 }
 
 </style>
@@ -105,9 +137,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.4);
 
 <body>
 
-<header>
-ONYX G INK
-</header>
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="logo">ONYX G</div>
+
+<div class="tagline">Premium Tattoo Studio</div>
+
+</div>
 
 <!-- TATTOO DESIGNS -->
 
@@ -134,7 +172,7 @@ ONYX G INK
 
 </section>
 
-<!-- LETTERING TATTOOS -->
+<!-- LETTERING -->
 
 <section>
 
@@ -150,7 +188,7 @@ ONYX G INK
 
 </section>
 
-<!-- REAL TATTOO WORK -->
+<!-- REAL WORK -->
 
 <section>
 
@@ -213,13 +251,17 @@ ONYX G INK
 <img src="C.E.O.jpg">
 
 <p>
+
 Onyx G is the founder of ONYX G INK — a tattoo artist dedicated to creating bold designs, powerful symbolism and meaningful body art.
+
 </p>
 
 </section>
 
 <a class="whatsapp" href="https://wa.me/234706207789">
+
 Book Tattoo on WhatsApp
+
 </a>
 
 </body>
