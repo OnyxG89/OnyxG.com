@@ -5,141 +5,69 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ONYX G INK</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL */
-
 body{
 margin:0;
-font-family:Poppins;
+font-family:Arial;
 color:white;
 background:url("studio2.jpg") center/cover fixed;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.7);
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px;
-z-index:1000;
-}
-
-nav a{
-color:#FFD700;
-text-decoration:none;
-font-weight:600;
+text-align:center;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-position:relative;
+padding:120px 20px;
+background:rgba(0,0,0,0.6);
 }
 
-.hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-}
-
-/* LOGO */
 .logo{
-font-family:'Cinzel',serif;
-font-size:120px;
-letter-spacing:8px;
+font-size:100px;
 color:#FFD700;
-
-text-shadow:
-0 2px 0 #e6c200,
-0 4px 0 #d4af37,
-0 6px 0 #b89600,
-0 8px 0 #8c6f00,
-0 12px 20px rgba(0,0,0,0.9),
-0 0 40px rgba(255,215,0,0.6);
+font-weight:bold;
+text-shadow:0 5px 15px black;
 }
 
 .tagline{
-font-family:'Great Vibes',cursive;
-font-size:38px;
+font-size:28px;
+margin-top:-20px;
 }
 
-/* CONTAINER */
+/* SECTIONS */
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
-
-h2{
-text-align:center;
-margin-bottom:30px;
-}
-
-/* SLIDER */
-
-.slider{
-overflow:hidden;
-position:relative;
-}
-
-.slide-track{
-display:flex;
-gap:15px;
-transition:0.5s;
-}
-
-.slide-track img{
-width:220px;
-height:220px;
-object-fit:cover;
+section{
+padding:60px 20px;
+background:rgba(0,0,0,0.6);
+margin:20px;
 border-radius:10px;
-transition:0.3s;
 }
 
-.slide-track img:hover{
-transform:scale(1.1);
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
 }
 
-/* ARROWS */
-
-.arrow{
-position:absolute;
-top:50%;
-font-size:40px;
-cursor:pointer;
-background:black;
-padding:6px 12px;
+.gallery img{
+width:100%;
+border-radius:10px;
 }
 
-.left{left:0;}
-.right{right:0;}
-
-/* VIDEO GRID */
+/* VIDEOS */
 
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+max-width:900px;
+margin:auto;
 }
 
 video{
@@ -147,64 +75,29 @@ width:100%;
 border-radius:10px;
 }
 
-/* STUDIO GRID */
+/* STUDIO */
 
 .studio{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
+max-width:900px;
+margin:auto;
 }
 
 .studio img{
 width:100%;
-height:250px;
-object-fit:cover;
 border-radius:10px;
 }
 
-/* PRICE */
+/* CEO */
 
-.price{
-max-width:500px;
-margin:auto;
-text-align:center;
-}
-
-/* BOOKING */
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-input,textarea,button{
-padding:12px;
-border-radius:6px;
-border:none;
-}
-
-button{
-background:#FFD700;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* MAP */
-
-.map iframe{
-width:100%;
-height:350px;
-border:0;
+.ceo img{
+width:250px;
+border-radius:10px;
 }
 
 /* SOCIAL */
-
-.social{
-text-align:center;
-}
 
 .social a{
 display:block;
@@ -224,21 +117,7 @@ padding:16px 28px;
 border-radius:40px;
 color:white;
 text-decoration:none;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-.logo{
-font-size:60px;
-}
-
-.slide-track img{
-width:160px;
-height:160px;
-}
-
+font-weight:bold;
 }
 
 </style>
@@ -247,92 +126,80 @@ height:160px;
 
 <body>
 
-<!-- NAV -->
-
-<nav>
-
-<a href="#gallery">Gallery</a> <a href="#videos">Videos</a> <a href="#studio">Studio</a> <a href="#pricing">Prices</a> <a href="#booking">Booking</a>
-
-</nav>
-
 <!-- HERO -->
 
 <div class="hero">
-
-<video autoplay muted loop>
-<source src="video8.mp4">
-</video>
 
 <div class="logo">ONYX G</div>
 <div class="tagline">Ink Your Story</div>
 
 </div>
 
-<!-- LETTERING -->
+<!-- GALLERY -->
 
-<div class="container" id="gallery">
+<section>
 
-<h2>Lettering Tattoos</h2>
+<h2>Tattoo Designs</h2>
 
-<div class="slider">
+<div class="gallery">
 
-<div class="arrow left" onclick="slide(-220)">❮</div>
-
-<div class="slide-track" id="slider">
+<img src="butterfly.jpg">
+<img src="cherry.jpg">
+<img src="Cross.jpg">
+<img src="Death bf Dishonor.jpg">
+<img src="Dolfins.jpg">
+<img src="eagle.jpg">
+<img src="flower.jpg">
+<img src="heart.jpg">
+<img src="wolf.jpg">
 
 <img src="F.O.E.jpg">
 <img src="M.O.E.jpg">
 <img src="O.S.S.jpg">
-<img src="Cross.jpg">
-<img src="Real.jpg">
 
 </div>
 
-<div class="arrow right" onclick="slide(220)">❯</div>
-
-</div>
-
-</div>
-
-<!-- SYMBOLS -->
-
-<div class="container">
-
-<h2>Symbol & Arm Tattoos</h2>
-
-<div class="slide-track">
-
-<img src="butterfly.jpg">
-<img src="cherry.jpg">
-<img src="Dolfins.jpg">
-<img src="eagle.jpg">
-<img src="wolf.jpg">
-<img src="flower.jpg">
-<img src="heart.jpg">
-
-</div>
-
-</div>
+</section>
 
 <!-- VIDEOS -->
 
-<div class="container" id="videos">
+<section>
 
 <h2>Live Tattoo Sessions</h2>
 
 <div class="video-grid">
 
-<video controls><source src="video1.mp4"></video> <video controls><source src="video2.mp4"></video> <video controls><source src="video4.mp4"></video> <video controls><source src="video7.mp4"></video> <video controls><source src="ink-on-skin.mp4"></video>
+<video controls>
+<source src="video1.mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4">
+</video>
+
+<video controls>
+<source src="video4.mp4">
+</video>
+
+<video controls>
+<source src="video7.mp4">
+</video>
+
+<video controls>
+<source src="ink-on-skin.mp4">
+</video>
 
 </div>
 
-</div>
+</section>
 
 <!-- STUDIO -->
 
-<div class="container studio" id="studio">
+<section>
 
 <h2>Inside The Studio</h2>
+
+<div class="studio">
 
 <img src="studio1.jpg">
 <img src="studio2.jpg">
@@ -340,71 +207,35 @@ height:160px;
 
 </div>
 
-<!-- PRICE -->
+</section>
 
-<div class="container price" id="pricing">
+<!-- CEO -->
 
-<h2>Tattoo Price List</h2>
+<section class="ceo">
 
-<p>Small Tattoos — $50+</p>
-<p>Medium Tattoos — $120+</p>
-<p>Large Tattoos — $250+</p>
-<p>Sleeves — $600+</p>
-<p>Custom Designs — Price depends on complexity</p>
+<h2>Founder & Artist</h2>
 
-</div>
+<img src="C.E.O.jpg">
 
-<!-- BOOKING -->
+<p>
+Onyx G — founder of ONYX G INK.
+</p>
 
-<div class="container" id="booking">
-
-<h2>Book Tattoo Appointment</h2>
-
-<form>
-
-<input placeholder="Your Name">
-<input placeholder="Your Email">
-<textarea placeholder="Describe your tattoo idea"></textarea>
-<button>Submit</button>
-
-</form>
-
-</div>
-
-<!-- MAP -->
-
-<div class="container map">
-
-<h2>Studio Location</h2>
-
-<iframe src="https://www.google.com/maps?q=Nigeria&output=embed"></iframe>
-
-</div>
+</section>
 
 <!-- SOCIAL -->
 
-<div class="container social">
+<section class="social">
 
 <h2>Follow ONYX G</h2>
 
 <a href="https://instagram.com/samuelvic36">Instagram: @samuelvic36</a> <a href="https://facebook.com">Facebook: Onyx Gandolf</a> <a href="https://tiktok.com/@onyx_g35">TikTok: @onyx_g35</a> <a href="#">Snapchat: sammyvictor36</a>
 
-</div>
+</section>
 
 <a class="whatsapp" href="https://wa.me/234706207789">
 Book Tattoo on WhatsApp
 </a>
-
-<script>
-
-let pos=0;
-
-function slide(amount){
-pos+=amount;
-document.getElementById("slider").style.transform=`translateX(${pos}px)`;
-}
-
-</script>
 
 </body>
 
