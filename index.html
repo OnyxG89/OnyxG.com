@@ -94,9 +94,16 @@ margin:auto;
 
 .studio img{
 width:100%;
-border-radius:10px;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+border:2px solid rgba(255,215,0,0.25);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.studio img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(255,215,0,0.6);
+}
 /* CEO */
 
 .ceo img{
